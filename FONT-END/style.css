@@ -1,0 +1,143 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* -----------PAGE PRINCIPALE----------- */
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background-color: #f3e9f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: scaleLoader 0.1s 2s forwards;
+}
+.loader__caddie img {
+    width: 15vw;
+    height: auto;
+    animation: moveCaddie 2s 1s forwards;
+}
+.loader__text img {
+    width: 50vw;
+    height: auto;
+}
+@keyframes moveCaddie {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(-8vw);
+    }
+    100% {
+        transform: translateX(110vw) rotate(-45deg);
+    }
+}
+@keyframes scaleLoader {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+.navbar-brand img{
+    width: 35vw;
+    height: auto;
+    max-width: 180px;
+}
+.navbar {
+    background-color: #f3e9f1;
+    z-index: 1;
+}
+.nav-link {
+    font-weight: bold;
+}
+.nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    transform: scale(0);
+    transition: transform 0.1s ease;
+    background: black;
+}
+.nav-link:hover::after {
+    transform: scale(1);
+}
+.navbar-collapse {
+    justify-content: end;
+}
+.v1 {
+    width: 100%;
+    height: auto;
+}
+.video {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+}
+.title {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.377);
+    border-radius: 10px;
+    font-size: 5vw;
+    font-family: 'Train One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+}
+.main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.card-body {
+    background-color: #f3e9f1;
+}
+.card {
+    padding: 0;
+}
+.footer {
+    background-color: #f3e9f1;
+    padding: 10px;
+}
+.footer a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+.footer .lorem {
+    padding-left: 35px;
+}
+.foot-items {
+    width: 33%;
+}
+.sujet {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.fab {
+    margin-right: 20px;
+    font-size: 30px;
+}
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+    .foot-items {
+        width: 100%;
+    }
+}
+
+
