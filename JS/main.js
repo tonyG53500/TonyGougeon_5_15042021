@@ -27,9 +27,9 @@ function displayArticle(article) {
     <div class="card col-md-6 col-lg-4 m-4 shadow" style="width: 22rem;">
         <img src="${article.imageUrl}" id="img" class="card-img-top" alt="Appareil photo">
         <div class="card-body">
-            <h5 class="card-title" id="title">${article.title}</h5>
+            <h5 class="card-title" id="title">${article.name}</h5>
             <p class="card-text" id="desc">${article.description}</p>
-            <a href="./produit.html?id=${article.id}" class="btn btn-outline-primary" id="href">Voir le produit</a>
+            <a href="./produit.html?id=${article._id}" class="btn btn-outline-primary" id="href">Voir le produit</a>
         </div>
     </div>`
 }

@@ -105,6 +105,9 @@ body {
 .card-body {
     background-color: #f3e9f1;
 }
+.card-body .card-title {
+    font-weight: bold;
+}
 .card {
     padding: 0;
 }
