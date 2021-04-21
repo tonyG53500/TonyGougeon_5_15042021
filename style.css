@@ -161,7 +161,7 @@ body {
     .price {
         margin-bottom: 20px!important;
     }
-    .main-panier {
+    .main-panier, .main-confirmation {
         padding: 50px 5px!important;
     }
     .basket {
@@ -206,4 +206,17 @@ body {
 }
 .table {
     margin-bottom: 0px;
+}
+
+/* -------------------PAGE CONFIRMATION------------------ */
+
+.main-confirmation {
+    margin-top: 85px;
+    padding: 50px;
+}
+.confirmation {
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 68vh;
 }
