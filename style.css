@@ -161,6 +161,12 @@ body {
     .price {
         margin-bottom: 20px!important;
     }
+    .main-panier {
+        padding: 50px 5px!important;
+    }
+    .basket {
+        padding: 15px 0px!important;
+    }
 }
 /* ----------------PAGE PRODUIT------------------ */
 
@@ -177,8 +183,27 @@ body {
 }
 .price {
     background-color: white;
-    padding: 7px 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: 2px solid black;
     margin: 0;
+}
+/* -----------------PAGE PANIER-------------------- */
+
+.main-panier {
+    margin-top: 85px;
+    padding: 50px;
+}
+.formulaire {
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.basket {
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.table {
+    margin-bottom: 0px;
 }
