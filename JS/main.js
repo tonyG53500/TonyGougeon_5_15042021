@@ -17,8 +17,8 @@ function getArticles() {
         .then(function(articles) {
             return articles
         })
-        .catch(function(error) {
-            alert(error)
+        .catch(function error() {
+            document.getElementById("row").innerHTML = `<div class="error d-flex justify-content-center"><h1>Oupsss!!! Une erreur technique est survenue.<br>Impossible d'afficher les articles.</h1></div>`
         })
 }
 

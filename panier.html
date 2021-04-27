@@ -35,11 +35,12 @@
 
     <main class="main-panier" id="main">
         <div class="basket mb-5">
-            <table class="table table-primary table-striped">
+            <table class="table table-primary table-striped table-responsive">
                 <thead>
                     <tr>
                         <th scope="col">Produit</th>
                         <th scope="col">Quantité</th>
+                        <th scope="col">Supprimer</th>
                         <th scope="col">Prix Unitaire</th>
                         <th scope="col">Total</th>
                     </tr>
@@ -63,6 +64,7 @@
                                 <option value="12">12</option>
                             </select>
                         </td>
+                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
                         <td>499.00 €</td>
                         <td>499.00 €</td>
                     </tr>
@@ -84,6 +86,7 @@
                                 <option value="12">12</option>
                             </select>
                         </td>
+                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
                         <td>2500.00 €</td>
                         <td>2500.00 €</td>
                     </tr>
@@ -105,10 +108,12 @@
                                 <option value="12">12</option>
                             </select>
                         </td>
+                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
                         <td>1300.00 €</td>
                         <td>1300.00 €</td>
                     </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td>Total du panier</td>
@@ -119,35 +124,35 @@
         </div>
 
         <div class="formulaire">
-            <form class="row g-3">
-                <div class="col-md-4">
+            <form class="form row g-3" action="" method="GET">
+                <div class="form col-md-4">
                   <label for="firstname" class="form-label">Prénom :</label>
-                  <input type="text" class="form-control" id="firstname">
+                  <input type="text" class="form-control" id="firstname" required>
                 </div>
-                <div class="col-md-4">
+                <div class="form col-md-4">
                   <label for="name" class="form-label">Nom :</label>
-                  <input type="text" class="form-control" id="name">
+                  <input type="text" class="form-control" id="name" required>
                 </div>
-                <div class="col-md-4">
+                <div class="form col-md-4">
                   <label for="email" class="form-label">E-mail :</label>
-                  <input type="email" class="form-control" id="email" placeholder="example@outlook.fr">
+                  <input type="email" class="form-control" id="email" placeholder="example@outlook.fr" required>
                 </div>
-                <div class="col-md-6">
+                <div class="form col-md-6">
                   <label for="adresse" class="form-label">Adresse :</label>
-                  <input type="text" class="form-control" id="adresse">
+                  <input type="text" class="form-control" id="adresse" required>
                 </div>
-                <div class="col-md-3">
+                <div class="form col-md-3">
                   <label for="codePostale" class="form-label">Code postale</label>
-                  <input type="text" class="form-control" id="codePostale">
+                  <input type="text" class="form-control" id="codePostale" required>
                 </div>
-                <div class="col-md-3">
+                <div class="form col-md-3">
                     <label for="city" class="form-label">Ville</label>
-                    <input type="text" class="form-control" id="city">
+                    <input type="text" class="form-control" id="city" required>
                   </div>
-                <div class="col d-flex justify-content-center">
-                    <a href="./confirmation.html" type="submit" class="btn btn-outline-primary mt-5">Procéder au paiement</a>
+                <div class="form col d-flex justify-content-center">
+                    <input type="submit" class="btn btn-outline-primary mt-5" value="Procéder au paiement"></input>
                 </div>
-              </form>
+            </form>
         </div>
     </main>
 
