@@ -213,11 +213,11 @@ body {
 .table {
     margin-bottom: 0px;
 }
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .table {
         display: block;
     }
-}
+} */
 
 /* -------------------PAGE CONFIRMATION------------------ */
 

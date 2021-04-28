@@ -37,7 +37,7 @@ function displayArticle(article) {
                 </div>
             </div>
             <div class="panier">
-                <p class="price" id="price">${article.price / 100} €</p>
+                <p class="price" id="price">${article.price / 100}.00 €</p>
                 <button type="submit" class="btn btn-outline-primary ms-auto" id="btn-panier">Ajouter au panier</button>
             </div>
         </div>

@@ -34,92 +34,20 @@
     </nav>
 
     <main class="main-panier" id="main">
-        <div class="basket mb-5">
+        <div class="basket mb-5 d-flex flex-direction-column justify-content-center" id="basket">
             <table class="table table-primary table-striped table-responsive">
                 <thead>
                     <tr>
                         <th scope="col">Produit</th>
-                        <th scope="col">Quantité</th>
-                        <th scope="col">prix Unitaire</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Supprimer</th>
+                        <th scope="col">Prix Unitaire</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Zurss 50S</td>
-                        <td>
-                            <select id="monselect">
-                                <option value="1"selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </td>
-                        <td>499.00 €</td>
-                        <td>499.00 €</td>
-                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Hirsch 400DTS</td>
-                        <td>
-                            <select id="monselect">
-                                <option value="1"selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </td>
-                        <td>2500.00 €</td>
-                        <td>2500.00 €</td>
-                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Katatone</td>
-                        <td>
-                            <select id="monselect">
-                                <option value="1"selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                        </td>
-                        <td>1300.00 €</td>
-                        <td>1300.00 €</td>
-                        <td><i class="fas fa-trash btn btn-outline-danger"></i></td>
-                    </tr>
+                <tbody id="tbody">
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td></td>
-                        <td></td>
                         <th>Total du panier</th>
-                        <td>4299.00 €</td>
-                        <td></td>
+                        <td id="totalPanier">0.00 €</td>
                     </tr>
                 </tfoot>
               </table>
@@ -132,20 +60,20 @@
                   <input type="text" class="form-control" id="firstname" required>
                 </div>
                 <div class="form col-md-4">
-                  <label for="name" class="form-label">Nom :</label>
-                  <input type="text" class="form-control" id="name" required>
+                  <label for="lastname" class="form-label">Nom :</label>
+                  <input type="text" class="form-control" id="lastname" required>
                 </div>
                 <div class="form col-md-4">
                   <label for="email" class="form-label">E-mail :</label>
                   <input type="email" class="form-control" id="email" placeholder="example@outlook.fr" required>
                 </div>
                 <div class="form col-md-6">
-                  <label for="adresse" class="form-label">Adresse :</label>
-                  <input type="text" class="form-control" id="adresse" required>
+                  <label for="adress" class="form-label">Adresse :</label>
+                  <input type="text" class="form-control" id="adress" required>
                 </div>
                 <div class="form col-md-3">
-                  <label for="codePostale" class="form-label">Code postale</label>
-                  <input type="text" class="form-control" id="codePostale" required>
+                  <label for="zipcode" class="form-label">Code postale</label>
+                  <input type="text" class="form-control" id="zipcode" required>
                 </div>
                 <div class="form col-md-3">
                     <label for="city" class="form-label">Ville</label>
