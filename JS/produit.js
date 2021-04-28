@@ -7,6 +7,7 @@ main()
 async function main() {
     const article = await getArticles()
     displayArticle(article)
+    addToLocalStorage(article)
 }
 
 
@@ -37,7 +38,7 @@ function displayArticle(article) {
             </div>
             <div class="panier">
                 <p class="price" id="price">${article.price / 100} €</p>
-                <a href="./panier.html?id=${article._id}" class="btn btn-outline-primary ms-auto" id="href">Ajouter au  panier</a>
+                <button type="submit" class="btn btn-outline-primary ms-auto" id="btn-panier">Ajouter au panier</button>
             </div>
         </div>
     </div>`
@@ -48,4 +49,34 @@ function displayArticle(article) {
         <input type="radio" id="lense" name="drone" value="lense">
         <label for="lense" id="test">` + lenses[x] + `</label><br>`
     }
+     
 }
+
+function addToLocalStorage(article) {
+    const btnPanier = document.getElementById("btn-panier")
+
+    btnPanier.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        let produitPanier = {
+            productName: article.name,
+            productIdentifiant: article._id,
+            productPrice: article.price,
+            productQuantity: 1
+        }
+
+        let productInLocalStorage = JSON.parse(localStorage.getItem("product"));
+
+        if(productInLocalStorage) {
+            productInLocalStorage.push(produitPanier)
+            localStorage.setItem("product", JSON.stringify(productInLocalStorage))
+            window.location.href = "./panier.html"
+        } else {
+            productInLocalStorage = []
+            productInLocalStorage.push(produitPanier)
+            localStorage.setItem("product", JSON.stringify(productInLocalStorage))
+            window.location.href = "./panier.html"
+        }
+    })  
+}
+
