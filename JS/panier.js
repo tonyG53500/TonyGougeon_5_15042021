@@ -1,5 +1,4 @@
 let productInLocalStorage = JSON.parse(localStorage.getItem("product"));
-console.log(productInLocalStorage);
 
 function displayPanier() {
     if(productInLocalStorage === null) {
@@ -14,6 +13,15 @@ function displayPanier() {
                 <td>${productInLocalStorage[i].productPrice / 100}.00 €</td>
             </tr>`
         }
+        const arrayPrice = []
+        for (p=0; p<productInLocalStorage.length; p++) {
+            arrayPrice.push(productInLocalStorage[p].productPrice)
+            }
+        const reducer = (acc, curr) => acc + curr
+        const totalPanier = (arrayPrice.reduce(reducer)/100)
+        document.getElementById("totalPanier").innerHTML = `${totalPanier}.00 €`
     }
 }
+
+
 displayPanier()
