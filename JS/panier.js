@@ -33,7 +33,7 @@ function listenInput() {
         if (!(productInLocalStorage === null)) {
             confirmOrder()
         } else {
-            alert("Votre panier est vide, impossible de procéder au paiement")
+            alert("Veuillez ajouter un produit à votre panier pour pouvoir procéder au paiement")
         }
     }
 
@@ -94,7 +94,7 @@ function confirmOrder() {
     const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/
 
     if (!(firstname.length > 1 && lastname.length > 1 && emailRegex.test(email) && adress.length > 3 && zipcodeRegex.test(zipcode) && city.length > 1)) {
-        alert("Veuillez remplir les champs correctements pour pouvoir procéder au paiement")
+        alert("Veuillez remplir tout le formulaire de contact pour pouvoir procéder au paiement")
         return
     }
 
