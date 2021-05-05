@@ -126,7 +126,7 @@ function confirmOrder() {
         .then((json) => {
             console.log(json)
             localStorage.removeItem("product")
-            window.location.href = `${window.location.origin}/confirmation.html?orderId=${json.orderId}`
+            window.location.href = `./confirmation.html?orderId=${json.orderId}`
         })
         .catch(() => {
             alert("il y a un problème technique")
