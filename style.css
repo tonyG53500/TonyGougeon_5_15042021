@@ -231,3 +231,11 @@ body {
     border-radius: 20px;
     height: 68vh;
 }
+.valid {
+    border: 1px solid green;
+    box-shadow: 0px 0px 3px 2px green;
+}
+.invalid {
+    border: 1px solid red;
+    box-shadow: 0px 0px 3px 2px red;
+}

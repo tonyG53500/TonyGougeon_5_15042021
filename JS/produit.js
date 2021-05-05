@@ -60,7 +60,7 @@ function addToLocalStorage(article) {
 
         let produitPanier = {
             productName: article.name,
-            productIdentifiant: article._id,
+            _id: article._id,
             productPrice: article.price,
             productQuantity: 1
         }
