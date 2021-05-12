@@ -2,6 +2,7 @@ main()
 
 async function main() {
     const articles = await getArticles()
+    console.log(articles);
     for (article of articles) {
         displayArticle(article)
     }

@@ -40,12 +40,12 @@ function listenInput() {
     validityInput(document.getElementById("firstname"), (e) => e.target.value.length > 1)
     validityInput(document.getElementById("lastname"), (e) => e.target.value.length > 1)
     validityInput(document.getElementById("email"), (e) => {
-        const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+        const emailRegex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
         return emailRegex.test(e.target.value)
     })
     validityInput(document.getElementById("adress"), (e) => e.target.value.length > 3)
     validityInput(document.getElementById("zipcode"), (e) => {
-        const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/
+        const zipcodeRegex = /^[0-9]{5}$/
         return zipcodeRegex.test(e.target.value)
     })
     validityInput(document.getElementById("city"), (e) => e.target.value.length > 1)
@@ -90,8 +90,8 @@ function confirmOrder() {
     const zipcode = document.getElementById("zipcode").value
     const city = document.getElementById("city").value
 
-    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    const zipcodeRegex = /[0-9]{5}(-[0-9]{4})?/
+    const emailRegex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
+    const zipcodeRegex = /^[0-9]{5}$/
 
     if (!(firstname.length > 1 && lastname.length > 1 && emailRegex.test(email) && adress.length > 3 && zipcodeRegex.test(zipcode) && city.length > 1)) {
         alert("Veuillez remplir tout le formulaire de contact pour pouvoir procéder au paiement")
