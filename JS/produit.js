@@ -5,23 +5,13 @@ const productId = urlSearchParams.get("id")
 main()
 
 async function main() {
-    const article = await getArticles()
+    const article = await getArticle()
     displayArticle(article)
     addToLocalStorage(article)
 }
 
-
-function getArticles() {
-    return fetch(`http://localhost:3000/api/cameras/${productId}`)
-        .then(function(httpBodyResponse) {
-            return httpBodyResponse.json()
-        })
-        .then(function(articles) {
-            return articles
-        })
-        .catch(function error() {
-            document.getElementById("main").innerHTML = `<div class="error d-flex justify-content-center"><h1>Oupsss!!! Une erreur technique est survenue.<br>Impossible d'afficher l'article.</h1></div>`
-        })
+function getArticle() {
+    return cam.cameraId
 }
 
 function displayArticle(article) {
@@ -57,6 +47,7 @@ function addToLocalStorage(article) {
 
     btnPanier.addEventListener("click", (event) => {
         event.preventDefault();
+        console.log(event);
 
         let produitPanier = {
             productName: article.name,

@@ -89,46 +89,13 @@ function confirmOrder() {
     const adress = document.getElementById("adress").value
     const zipcode = document.getElementById("zipcode").value
     const city = document.getElementById("city").value
-
     const emailRegex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
     const zipcodeRegex = /^[0-9]{5}$/
 
     if (!(firstname.length > 1 && lastname.length > 1 && emailRegex.test(email) && adress.length > 3 && zipcodeRegex.test(zipcode) && city.length > 1)) {
-        alert("Veuillez remplir tout le formulaire de contact pour pouvoir procéder au paiement")
+        alert("Veuillez remplir tout les champs du formulaire correctement pour pouvoir procéder au paiement")
         return
     }
 
-    const products = Object.values(productInLocalStorage).map((product) => {
-        return product._id
-    })
-
-    console.log(products);
-
-    const order = {
-        contact: {
-            firstName: firstname,
-            lastName: lastname,
-            email: email,
-            address: adress + " " + zipcode,
-            city: city
-        },
-        products: products,
-    }
-
-    const requestOptions = {
-        method: "POST",
-        body: JSON.stringify(order),
-        headers: {"Content-Type": "application/json; charset=utf-8"},
-    }
-
-    fetch("http://localhost:3000/api/cameras/order", requestOptions)
-        .then((response) => response.json())
-        .then((json) => {
-            console.log(json)
-            localStorage.removeItem("product")
-            window.location.href = "./confirmation.html" + `?orderId=${json.orderId}`
-        })
-        .catch(() => {
-            alert("Il y a un problème technique")
-        })
+    cam.postProduct()
 }

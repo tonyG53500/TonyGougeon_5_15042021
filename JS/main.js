@@ -8,19 +8,8 @@ async function main() {
     }
 }
 
-
-
 function getArticles() {
-    return fetch('http://localhost:3000/api/cameras')
-        .then(function(httpBodyResponse) {
-            return httpBodyResponse.json()
-        })
-        .then(function(articles) {
-            return articles
-        })
-        .catch(function error() {
-            document.getElementById("row").innerHTML = `<div class="error d-flex justify-content-center"><h1>Oupsss!!! Une erreur technique est survenue.<br>Impossible d'afficher les articles.</h1></div>`
-        })
+    return cam.camera
 }
 
 function displayArticle(article) {
