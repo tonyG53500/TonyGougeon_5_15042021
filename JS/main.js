@@ -1,25 +1,28 @@
-main()
+class Main {
 
-async function main() {
-    const articles = await getArticles()
-    console.log(articles);
-    for (article of articles) {
-        displayArticle(article)
+    articleTab = [];
+
+    constructor()
+    {
+        this.articleTab = [];
+        this.start();
     }
-}
 
-function getArticles() {
-    return cam.camera
-}
+    async getArticles() {
+        this.articleTab = await cam.camera;
+    }
+    
+    displayArticle(article) {
+        document.getElementById("row").innerHTML += article.display();
+    }
 
-function displayArticle(article) {
-    document.getElementById("row").innerHTML += `
-    <div class="card col-md-6 col-lg-4 m-4 shadow" style="width: 22rem;">
-        <img src="${article.imageUrl}" id="img" class="card-img-top" alt="Appareil photo">
-        <div class="card-body">
-            <h5 class="card-title" id="title">${article.name}</h5>
-            <p class="card-text" id="desc">${article.description}</p>
-            <a href="./produit.html?id=${article._id}" class="btn btn-outline-primary" id="href">Voir le produit</a>
-        </div>
-    </div>`
+    async start()
+    {
+        const articles = await this.getArticles()
+        let article;
+        for (article of this.articleTab) {
+            this.displayArticle(article)
+        }
+
+    }
 }

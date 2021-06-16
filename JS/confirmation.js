@@ -5,6 +5,7 @@ console.log(orderId);
 
 displayOrderId()
 
+// Affiche l'Id de la commande qui nous est retourné
 function displayOrderId() {
     document.getElementById("orderId").innerHTML = `${orderId}`
 }

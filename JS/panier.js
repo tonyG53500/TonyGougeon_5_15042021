@@ -2,6 +2,7 @@ let productInLocalStorage = JSON.parse(localStorage.getItem("product"));
 
 displayPanier()
 
+// Affiche le ou les articles dans le panier
 function displayPanier() {
     if(productInLocalStorage === null) {
         document.getElementById("basket").innerHTML = `
@@ -27,6 +28,7 @@ function displayPanier() {
     listenInput()
 }
 
+// valide la page panier pour pouvoir passer la commande
 function listenInput() {
     document.getElementById("confirm").onclick = (e) => {
         e.preventDefault()
@@ -82,6 +84,7 @@ function neutralInput(elt) {
     elt.style.boxshadow = ""
 }
 
+// Valide le formulaire de contacte
 function confirmOrder() {
     const firstname = document.getElementById("firstname").value
     const lastname = document.getElementById("lastname").value

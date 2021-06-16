@@ -14,6 +14,7 @@ function getArticle() {
     return cam.cameraId
 }
 
+// Affiche l'article avec ses données
 function displayArticle(article) {
     document.getElementById("main").innerHTML = `
     <div class="card m-4 shadow d-flex flex-row">
@@ -34,7 +35,7 @@ function displayArticle(article) {
     </div>`
     const choice = document.getElementById("choice-items")
     let lenses = article.lenses
-    for (x=0; x< lenses.length ; x++) {
+    for (x=0; x<lenses.length ; x++) {
         choice.innerHTML += `
         <input type="radio" id="lense" name="drone" value="lense">
         <label for="lense" id="test">` + lenses[x] + `</label><br>`
@@ -42,6 +43,7 @@ function displayArticle(article) {
      
 }
 
+// Ajoute le ou les articles dans un tableau dans le Local storage
 function addToLocalStorage(article) {
     const btnPanier = document.getElementById("btn-panier")
 
@@ -51,7 +53,7 @@ function addToLocalStorage(article) {
 
         let produitPanier = {
             productName: article.name,
-            _id: article._id,
+            productId: article.id,
             productPrice: article.price,
             productQuantity: 1
         }
